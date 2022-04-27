@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ustozlar</title>
+</head>
+<body>
+<H3>Hamma ustozlar  ro'yhati</H3>
+<form>
+    <input name="qidirish" placeholder="Ustoz ismi?">
+
+    <button>Qidirish</button>
+
+</form>
+{%for i in Ustozlar%}
+<h5>{{i}}</h5>
+<button><a href="/ustoz/{{i.id}}/">O'chirish</a></button>
+{%endfor%}
+</body>
+</html>

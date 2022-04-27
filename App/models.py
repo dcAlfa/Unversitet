@@ -10,7 +10,10 @@ class Ustoz(models.Model):
 
 class Fan(models.Model):
     nom = models.CharField(max_length=50)
-    yonalish = models.ManyToManyField(Ustoz,on_delete=models.CASCADE)
+    yonalish = models.ForeignKey(Ustoz, on_delete=models.CASCADE, related_name='m_ustoz')
+    sana = models.DateField()
+    def __str__(self):
+        return self.nom
 
 
 
