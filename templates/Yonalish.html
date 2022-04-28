@@ -16,5 +16,24 @@
     <h3>{{ i }}</h3>
     <button><a href="/yonalish3/{{i.id}}/">O'chirish</a></button>
 {%endfor%}
+<br>
+<hr>
+<form method="post" action="/birlashma/">{%csrf_token%}
+    <label>Nomi:</label>
+    <input type="text" name="n" placeholder="Fan nomini kiriting.."><br><br>
+    <label>Ustozlarni tanlash:</label>
+    <select name="ustozi">
+        {%for i in shablon%}
+            <option value="{{i.id}}">{{i.ism}}</option>
+        {%endfor%}
+    </select> <br><br>
+    <label>Fanlarni tanlash:</label>
+    <select name="fani">
+        {%for i in fanlar%}
+            <option value="{{i.id}}">{{i.nom}}</option>
+        {%endfor%}
+    </select> <br><br>
+    <button type="submit">Save</button>
+</form>
 </body>
 </html>

@@ -16,5 +16,20 @@
     <h5>{{i}}</h5>
     <button><a href="/fan/{{i.id}}/">O'chirish</a></button>
 {%endfor%}
+<br>
+<hr>
+<form method="POST"  action="/fanlar/"> {%csrf_token%}
+    <label>Nomi:</label>
+    <input type="text" name="n" placeholder="Fan nomini kiriting.."><br><br>
+    <label>Code:</label>
+    <input type="number" name="c" placeholder="Fan kodini kiriting.."><br><br>
+    <label>Vaqt:</label>
+    <input type="date" name="v" placeholder="Vaqtni tanlang.."><br><br>
+    <label>Aktivmi:</label>
+    <input type="checkbox" name="a"><br><br>
+    <label>Saqlash:</label>
+    <button type="submit">Save</button>
+</form>
+
 </body>
 </html>

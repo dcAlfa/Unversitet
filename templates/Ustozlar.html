@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ustozlar</title>
+
 </head>
 <body>
 <H3>Hamma ustozlar  ro'yhati</H3>
@@ -16,5 +17,20 @@
 <h5>{{i}}</h5>
 <button><a href="/ustoz/{{i.id}}/">O'chirish</a></button>
 {%endfor%}
+<br>
+<hr>
+<form method = "POST" action="/ustozlar/" >{%csrf_token%}
+    <label>Ism:</label>
+    <input type="text" name="ismi" placeholder="Ismni kiriting..."><br><br>
+    <label>Yoshi:</label>
+    <input type="number" name="y" placeholder="Yosh kiriting..."><br><br>
+    <label>Nafaqadami:</label>
+    <input type="checkbox" name="n"><br><br>
+    <label>Sana:</label>
+    <input type="date" name="v" placeholder="Vaqtni tanlang..."><br><br>
+    <label>Saqlash:</label>
+    <button type="submit">Save</button>
+</form>
+<a href="http://127.0.0.1:8000/"><h3>Asosiyga qaytish</h3></a>
 </body>
 </html>
