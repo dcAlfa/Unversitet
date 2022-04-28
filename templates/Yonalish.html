@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yonalish</title>
+</head>
+<body>
+<h1>Yonalish sahifasiga hush kelibsiz</h1>
+<form>
+    <input name="qidirish" placeholder="Yonalishdagi ustozni kiriting?">
+
+    <button>Qidirish</button>
+
+</form>
+{% for i in Hammasi %}
+    <h3>{{ i }}</h3>
+    <button><a href="/yonalish3/{{i.id}}/">O'chirish</a></button>
+{%endfor%}
+</body>
+</html>

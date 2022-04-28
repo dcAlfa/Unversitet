@@ -12,6 +12,8 @@ class UstozAdmin(ModelAdmin):
 @admin.register(Fan)
 class FanAdmin(ModelAdmin):
     search_fields = ('id', 'nom',)
-    autocomplete_fields = ('yonalish',)
 
 
+@admin.register(Yonalish)
+class YonalishAdmin(ModelAdmin):
+    search_fields = ('id', 'nom',)
