@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ustozni taxrirlash!</title>
+</head>
+<body>
+<h2>Ustoz taxrirlashga sahifasiga xush kelibsiz!</h2>
+<h2>Ustozni hamma malumotlarini kiritish majburiy...</h2>
+<br>
+<br>
+<form method = "POST" action="/ustoz-t/{{ustoz.id}}/" >{%csrf_token%}
+    <label>Ism:</label>
+    <input type="text" name="ismi" value="{{ustoz.ism}}"><br><br>
+    <label>Yoshi:</label>
+    <input type="number" name="y" value="{{ustoz.yosh}}"><br><br>
+    <label>Nafaqadamidi: {{ustoz.nafaqada}}</label>
+    <input type="checkbox" name="n"><br><br>
+    <label>Sana:</label>
+    <input type="date" name="v" value="{{ustoz.sana}}"><br><br>
+    <label>Saqlash:</label>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

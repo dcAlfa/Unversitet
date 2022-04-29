@@ -76,3 +76,53 @@ def ochir_fan(request, fn):
 def ochir_yonalish(request, ysh):
     Yonalish.objects.get(id=ysh).delete()
     return redirect("/birlashma/")
+
+
+def ustoz_edit(request, ue):
+    if request.method=="POST":
+        if request.POST.get('n')== "False":
+            natija = False
+        else:
+            natija = True
+        a = Ustoz.objects.get(id=ue)
+        a.ism = request.POST.get('ismi')
+        a.yosh = request.POST.get('y')
+        a.nafaqada = natija
+        a.sana = request.POST.get('v')
+        a.save()
+        return redirect("/ustozlar/")
+    u = Ustoz.objects.get(id=ue)
+    return render(request, "Ustoz_edit.html", {"ustoz":u})
+
+def fan_edit(request, ft):
+    if request.method=="POST":
+        if request.POST.get('n') == "False":
+            natija = False
+        else:
+            natija = True
+        f = Fan.objects.get(id=ft)
+        f.nom = request.POST.get('n')
+        f.cod = request.POST.get('c')
+        f.vaqt = request.POST.get('v')
+        f.is_active = natija
+        f.save()
+        return redirect("/fanlar/")
+    m = Fan.objects.get(id=ft)
+    return render(request,"Fan_edit.html",{"fanlar": m})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

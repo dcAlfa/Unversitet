@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fan sahifasini tahrirlash</title>
+</head>
+<body>
+<h2>Fanlarni tahrirlash sahifamizga hush kelibsiz...</h2>
+<form method="POST"  action="/fan-t/{{fanlar.id}}/"> {%csrf_token%}
+    <label>Nomi:</label>
+    <input type="text" name="n" value="{{fanlar.nom}}"><br><br>
+    <label>Code:</label>
+    <input type="number" name="c" value="{{fanlar.cod}}"><br><br>
+    <label>Vaqt:</label>
+    <input type="date" name="v" value="{{fanlar.vaqt}}"><br><br>
+    <label>Aktivmi: {{fanlar.is_active}}</label>
+    <input type="checkbox" name="a"><br><br>
+    <label>Saqlash:</label>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
